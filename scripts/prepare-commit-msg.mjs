@@ -13,13 +13,13 @@ function loadWorkflowConfig() {
     const raw = readFileSync(new URL('../workflow.config.json', import.meta.url), 'utf8');
     return JSON.parse(raw);
   } catch {
-    return { issuePrefix: 'fl', issueSeparator: '#' };
+    return { issuePrefix: 'wr', issueSeparator: '#' };
   }
 }
 
 try {
   const config = loadWorkflowConfig();
-  const prefix = config.issuePrefix || 'fl';
+  const prefix = config.issuePrefix || 'wr';
   const sep = config.issueSeparator || '#';
 
   const branch = execSync('git rev-parse --abbrev-ref HEAD', {
@@ -36,7 +36,7 @@ try {
   const issueNumber = match[1];
   const content = readFileSync(msgFile, 'utf8');
 
-  // If already tagged with fl#<number> or if it's a merge/revert, skip
+  // If already tagged with wr#<number> or if it's a merge/revert, skip
   const tagRegex = new RegExp(`\\b${prefix}\\${sep}\\d+`, 'i');
   if (tagRegex.test(content) || /^Merge /i.test(content) || /^Revert /i.test(content)) {
     process.exit(0);

@@ -1,5 +1,5 @@
 name: 🐛 Bug Report
-description: Report an issue or bug found in Fluvio
+description: Report an issue or bug found in Weir
 title: "[Bug]: "
 labels: ["bug"]
 body:
