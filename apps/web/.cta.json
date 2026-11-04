@@ -2,7 +2,7 @@
   "projectName": "web",
   "mode": "file-router",
   "typescript": true,
-  "packageManager": "yarn",
+  "packageManager": "pnpm",
   "includeExamples": false,
   "tailwind": true,
   "projectPreset": "default",

@@ -33,5 +33,5 @@ Describe the manual or automated tests you ran to verify your changes.
 
 - [ ] My branch name follows `<type>/[<scope>#]<issue-number>-<branch-name>` (e.g. `feat/auth#12-login-flow` or `chore/7-apps-setup`)
 - [ ] My commits follow Conventional Commits and end with the issue tag (e.g. `feat: add login flow fl#12`)
-- [ ] I have verified the code locally (`yarn lint`, `yarn build`)
+- [ ] I have verified the code locally (`pnpm lint`, `pnpm build`)
 - [ ] I have updated documentation where necessary

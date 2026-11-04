@@ -5,8 +5,8 @@ Welcome to your new TanStack Start app!
 To run this application:
 
 ```bash
-yarn install
-yarn run dev
+pnpm install
+pnpm run dev
 ```
 
 # Building For Production
@@ -14,7 +14,7 @@ yarn run dev
 To build this application for production:
 
 ```bash
-yarn run build
+pnpm run build
 ```
 
 ## Styling
