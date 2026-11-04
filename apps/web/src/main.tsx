@@ -2,7 +2,7 @@ import ReactDOM from 'react-dom/client'
 import { RouterProvider, createRouter } from '@tanstack/react-router'
 import { routeTree } from './routeTree.gen'
 
-import '@fluvio/ui/styles.css';
+import '@weir/ui/styles.css';
 
 const router = createRouter({
   routeTree,

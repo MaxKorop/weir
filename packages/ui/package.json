@@ -1,5 +1,5 @@
 {
-  "name": "@fluvio/ui",
+  "name": "@weir/ui",
   "version": "0.0.0",
   "private": true,
   "sideEffects": false,

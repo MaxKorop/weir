@@ -1,5 +1,5 @@
 {
-  "name": "fluvio",
+  "name": "weir",
   "private": true,
   "packageManager": "pnpm@12.4.2",
   "devDependencies": {

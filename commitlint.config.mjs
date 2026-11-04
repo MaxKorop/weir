@@ -5,15 +5,15 @@ function loadWorkflowConfig() {
     const raw = fs.readFileSync(new URL('./workflow.config.json', import.meta.url), 'utf8');
     return JSON.parse(raw);
   } catch {
-    return { issuePrefix: 'fl', issueSeparator: '#' };
+    return { issuePrefix: 'wr', issueSeparator: '#' };
   }
 }
 
 const workflowConfig = loadWorkflowConfig();
-const prefix = workflowConfig.issuePrefix || 'fl';
+const prefix = workflowConfig.issuePrefix || 'wr';
 const sep = workflowConfig.issueSeparator || '#';
 
-// Strictly matches "fl#<number>" without spaces in commit messages
+// Strictly matches "wr#<number>" without spaces in commit messages
 const ISSUE_TAG_REGEX = new RegExp(`\\b${prefix}\\${sep}\\d+$`);
 
 export default {
