@@ -22,6 +22,7 @@ Fixes / Relates to: #
 - [ ] `apps/api-gateway`
 - [ ] `apps/user-svc`
 - [ ] `apps/transaction-svc`
+- [ ] `apps/mobile`
 - [ ] `packages/ui`
 - [ ] Root / Tooling
 
