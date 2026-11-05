@@ -11,17 +11,18 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
-
-      - name: Enable Corepack
-        run: corepack enable
+          node-version-file: .nvmrc
+          cache: pnpm
 
       - name: Install dependencies
-        run: yarn --immutable
+        run: pnpm install --frozen-lockfile
 
       - name: Validate PR Title
         run: |
-          echo "${{ github.event.pull_request.title }}" | yarn commitlint
+          echo "${{ github.event.pull_request.title }}" | pnpm commitlint

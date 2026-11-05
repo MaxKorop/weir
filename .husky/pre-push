@@ -1,1 +1,1 @@
-yarn lint:branch
+pnpm lint:branch
