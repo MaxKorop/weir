@@ -1,0 +1,52 @@
+version: '3.8'
+
+services:
+  # User Service DB
+  postgres-user:
+    image: postgres:16-alpine
+    container_name: weir-db-user
+    environment:
+      POSTGRES_USER: weir_user
+      POSTGRES_PASSWORD: weir_password
+      POSTGRES_DB: weir_user_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata_user:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U weir_user -d weir_user_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  # Transaction Service DB
+  postgres-transaction:
+    image: postgres:16-alpine
+    container_name: weir-db-transaction
+    environment:
+      POSTGRES_USER: weir_txn
+      POSTGRES_PASSWORD: weir_password
+      POSTGRES_DB: weir_transaction_db
+    ports:
+      - "5433:5432" # Proxying to external port 5433 to avoid conflict with 5432
+    volumes:
+      - pgdata_txn:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U weir_txn -d weir_transaction_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  # Redis for cache and Pub/Sub
+  redis:
+    image: redis:7-alpine
+    container_name: weir-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redisdata:/data
+
+volumes:
+  pgdata_user:
+  pgdata_txn:
+  redisdata:
