@@ -4,7 +4,9 @@ Briefly describe the purpose of this PR and what changes were made.
 
 ## Related Issue
 
-Fixes / Relates to: #
+Closes #<issue-number>
+
+<!-- `Closes` auto-closes the issue when this PR is merged. If the PR should not close it, use `Relates to #<issue-number>` instead. -->
 
 ## Type of Change
 
