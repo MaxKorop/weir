@@ -24,6 +24,7 @@ Closes #<issue-number>
 - [ ] `apps/api-gateway`
 - [ ] `apps/user-svc`
 - [ ] `apps/transaction-svc`
+- [ ] `apps/mobile`
 - [ ] `packages/ui`
 - [ ] Root / Tooling
 
