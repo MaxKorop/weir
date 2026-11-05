@@ -6,6 +6,8 @@ on:
 
 jobs:
   check-branch:
+    # Skip release PRs (development -> main)
+    if: ${{ !(github.head_ref == 'development' && github.base_ref == 'main') }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
