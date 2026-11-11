@@ -9,7 +9,7 @@
     "husky": "^9.1.7",
     "lint-staged": "^17.5.0",
     "turbo": "^2.8.17",
-    "vite": "^8.2.1"
+    "vite": "^8.3.6"
   },
   "scripts": {
     "build": "turbo run build",
